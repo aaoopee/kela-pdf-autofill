@@ -11,7 +11,8 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.get('/', function(req, resp) {
-	resp.send(pdfFiller);
+	console.log(pdfFiller);
+	resp.send('kela-pdf-autofill');
 });
 
 app.listen(PORT, function() {
