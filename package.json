@@ -18,10 +18,10 @@
   "homepage": "https://github.com/aaoopee/kela-pdf-autofill#readme",
   "buildpacks": [
     {
-      "url": "https://github.com/ddollar/heroku-buildpack-apt"
+      "url": "heroku/nodejs"
     },
     {
-      "url": "heroku/nodejs"
+      "url": "https://github.com/fxtentacle/heroku-pdftk-buildpack.git"
     }
   ],
   "dependencies": {
