@@ -2,7 +2,7 @@
   "name": "kela-pdf-autofill",
   "version": "0.0.1",
   "description": "Test application for Kela pdf autofill",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,10 +16,15 @@
     "url": "https://github.com/aaoopee/kela-pdf-autofill/issues"
   },
   "homepage": "https://github.com/aaoopee/kela-pdf-autofill#readme",
+  "buildpacks": [
+    {
+      "url": "https://github.com/ddollar/heroku-buildpack-apt"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "dependencies": {
-    "bcrypt": "^1.0.2",
-    "body-parser": "^1.16.0",
-    "express": "^4.14.0",
-    "underscore": "^1.8.3"
+    "pdffiller": "0.0.8"
   }
 }
