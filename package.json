@@ -16,14 +16,6 @@
     "url": "https://github.com/aaoopee/kela-pdf-autofill/issues"
   },
   "homepage": "https://github.com/aaoopee/kela-pdf-autofill#readme",
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/fxtentacle/heroku-pdftk-buildpack.git"
-    }
-  ],
   "dependencies": {
     "pdffiller": "0.0.8"
   }
