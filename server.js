@@ -12,7 +12,19 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, resp) {
 	console.log(pdfFiller);
-	resp.send('kela-pdf-autofill');
+
+	var sourcePDF = 'http://foersom.com/net/HowTo/data/OoPdfFormExample.pdf';
+	var FDF_data = pdfFiller.generateFDFTemplate(sourcePDF, null, function(err,fdfData) {
+		console.log('Generating FDF data');
+
+		if (err) {
+			console.error('Error '+err);
+			resp.status(404).send(err);
+		} else {
+			console.log('Sending FDF Data '+JSON.stringify(fdfData));
+			resp.json(fdfData);
+		}
+	});
 });
 
 app.listen(PORT, function() {
