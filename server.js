@@ -66,7 +66,7 @@ app.get('/doc', function(req, resp) {
 
 		}
 		console.log('In callback');
-		resp.send(outputPdf);
+		resp.sendFile(outputPdf);
 
 	});
 
