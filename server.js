@@ -36,8 +36,8 @@ var _data = {
             "nascar" : "Off"
         };
 
-var inputPdf = "./test.pdf";
-var outputPdf = "./output.pdf";
+var inputPdf = __dirname+"/test.pdf";
+var outputPdf = __dirname+"/output.pdf";
 
 
 app.use(bodyParser.json());
