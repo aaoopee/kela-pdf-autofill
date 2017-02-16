@@ -36,7 +36,7 @@ var _data = {
             "nascar" : "Off"
         };
 
-var inputPdf = __dirname+"/test.pdf";
+var inputPdf = __dirname+"/KU206.pdf";
 var outputPdf = __dirname+"/output.pdf";
 
 
