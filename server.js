@@ -62,14 +62,15 @@ app.get('/doc', function(req, resp) {
 	pdfFiller.fillForm(inputPdf, outputPdf, _data, function(err) {
 		if (err) {
 			console.error('Error '+err);
+			resp.send(404).send(err);
+
 		}
-
 		console.log('In callback');
+		resp.send(outputPdf);
 
-		resp.status(404).send(err);
 	});
 
-	resp.send('End of doc generation function. Callback may still be active.');
+	// resp.send('End of doc generation function. Callback may still be active.');
 });
 
 
