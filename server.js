@@ -36,14 +36,15 @@ var _data = {
             "nascar" : "Off"
         };
 
-var inputPdf = __dirname+"/KU206.pdf";
 var outputPdf = __dirname+"/output.pdf";
 
 
 app.use(bodyParser.json());
 
-app.get('/fdf', function(req, resp) {
+app.get('/fdf/:filename', function(req, resp) {
 	console.log('Generating FDF data');
+
+	var inputPdf =  __dirname+"/"+req.params.filename;
 
 	var FDF_data = pdfFiller.generateFDFTemplate(inputPdf, null, function(err,fdfData) {
 		if (err) {
@@ -56,8 +57,11 @@ app.get('/fdf', function(req, resp) {
 	});
 });
 
-app.get('/doc', function(req, resp) {
+app.get('/doc/:filename', function(req, resp) {
 	console.log('Generating doc.')
+
+	var inputPdf =  __dirname+"/"+req.params.filename;
+
 
 	pdfFiller.fillForm(inputPdf, outputPdf, _data, function(err) {
 		if (err) {
